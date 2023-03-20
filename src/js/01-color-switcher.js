@@ -7,9 +7,7 @@ let timer = null;
 startBtn.addEventListener('click', clickOnStart);
 stopBtn.addEventListener('click', clickOnStop);
 
-function onDisableBtn () {
-    button.setAttribute('disabled', 'disabled');
-}
+
 
 onDisableBtn(stopBtn);
 
@@ -27,6 +25,10 @@ function clickOnStop () {
     onDisableBtn(stopBtn);
     startBtn.removeAttribute('disabled');
 };
+
+function onDisableBtn () {
+    button.setAttribute('disabled', 'disabled');
+}
 
 function getRandomHexColor() {
     return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
