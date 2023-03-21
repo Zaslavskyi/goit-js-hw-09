@@ -2,8 +2,6 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import Notiflix from 'notiflix';
 
-
-
 const refs = {
     inputDate: document.querySelector('[id="datetime-picker"]'),
     startBtn: document.querySelector('[data-start]'),
@@ -13,7 +11,7 @@ const refs = {
     timerSeconds: document.querySelector('[data-seconds]'),
 };
 
-let date = null;
+let dateValue = null;
 let timerId = null;
 
 refs.startBtn.addEventListener('click', onStartTimer);
@@ -45,8 +43,8 @@ const options = {
     time_24hr: true,
     defaultDate: new Date(),
     minuteIncrement: 1,
-    onClose(selectedDates) {
-        console.log(selectedDates[0]);
+    onClose([selectedDates]) {
+    onDateCheck(selectedDates);
     },
     };
 
@@ -96,7 +94,7 @@ const options = {
     function addLeadingZero(value) {
         return String(value).padStart(2, '0');
     };
-    
+
 
     function convertMs(ms) {
         // Number of milliseconds per unit of time
