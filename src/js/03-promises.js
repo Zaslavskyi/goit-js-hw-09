@@ -40,29 +40,3 @@ function createPromise({position, delay}) {
   });
 };
 
-
-
-// form.addEventListener('submit', onFormSubmit);
-
-// function onFormSubmit(e) {
-//   e.preventDefault();
-
-//   const {
-//     elements: {delay, step, amount},
-//   } = e.currentTarget;
-
-//   let currentDelay = Number(delay.value);
-
-//   for (let i = 1; i <= Number(amount.value); i+=1) {
-//     createPromise(i, currentDelay)
-//     .then(({position, delay}) => {
-//       Notiflix.Notify.success(`Fulfilledvpromise ${position} in ${delay}ms`);
-//     })
-//     .cath(({position, delay}) => {
-//       Notiflix.Notify.failure(`Rejected promise ${position} in ${delay}ms`);
-//     });
-
-//     currentDelay += Number(step.value);
-//   };
-// };
-
